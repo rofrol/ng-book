@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,8 +10,26 @@
     <body ng-app="testApp">
 
     <div ng-controller="appCtrl as app">      
-        {{app.name}}
-        <lista></lista>
+
+        <form name="form" novalidate>
+            <div>
+                <label>User name</label>
+                <input type="text" name="username" ng-model="singup.username" ng-maxlength="3" required />
+                <div class="error" ng-show="form.username.$dirty && form.username.$invalid">
+                    <small class="error" ng-show="form.username.$error.required">username is required</small>
+                    <small class="error" ng-show="form.username.$error.maxlength">username cannot be longer than 3 characters</small>
+                </div>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" ng-model="singup.email" required />
+                <div class="error" ng-show="form.email.$dirty && form.email.$invalid">
+                    <small class="error" ng-show="form.email.$error.required">email is required</small>
+                    <small class="error" ng-show="form.email.$error.email">invalid email</small>
+                </div>
+            </div>
+            <div><button type="submit" ng-disabled="form.$invalid">Submit</button></div>
+        </form>
     </div>
   
     <script src="js/vendor/angular.min.js"></script>
