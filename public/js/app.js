@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('testApp', [])
+  angular.module('testApp', ['ngMessages'])
 
   .controller('appCtrl', App)
 
@@ -9,7 +9,7 @@
     return {
       restrict: 'E',
       templateUrl: 'views/lista.html'
-    }
+    };
   })
 
   .directive('ngFocus', function(){
