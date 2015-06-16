@@ -1,0 +1,14 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "competency-test",
+  "description": "competency-test",
+  "repository": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "start": "http-server -a 127.0.0.1 -p 9900 -o"
+  }
+}
