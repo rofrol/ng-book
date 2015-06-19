@@ -34,6 +34,17 @@
         });
       }
     };
+  })
+
+  .directive('myA', function(){
+    return {
+      restrict: 'E',
+      replace: true,
+      scope: {
+        myUrl: '@'
+      },
+      template: '<a href="{{myUrl}}">text</a>'
+    }
   });
 
   function App() {
